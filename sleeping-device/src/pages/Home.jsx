@@ -5,16 +5,16 @@ import ControlPanel from "../components/ControlPanel";
 
 export default function Home() {
   const sounds = [
-    { name: "🌧️", file: "/sounds/rain.wav" },
-    { name: "⛈️", file: "/sounds/storm.wav" },
-    { name: "🕊️", file: "/sounds/bird.wav" },
-    { name: "🌬️", file: "/sounds/wind.wav" },
-    { name: "🌊", file: "/sounds/water.wav" },
-    { name: "🔥", file: "/sounds/fire.wav" },
-    { name: "🕉️", file: "/sounds/om.mp3" },
-    { name: "🚂", file: "/sounds/train.wav" },
-    { name: "🦗", file: "/sounds/insects.wav" },
-    { name: "🎶", file: "/sounds/whistle.mp3" },
+    { name: "🌧️", file: "/sound/rain.wav" },
+    { name: "⛈️", file: "/sound/storm.wav" },
+    { name: "🕊️", file: "/sound/bird.wav" },
+    { name: "🌬️", file: "/sound/wind.wav" },
+    { name: "🌊", file: "/sound/water.wav" },
+    { name: "🔥", file: "/sound/fire.wav" },
+    { name: "🕉️", file: "/sound/om.mp3" },
+    { name: "🚂", file: "/sound/train.wav" },
+    { name: "🦗", file: "/sound/insects.wav" },
+    { name: "🎶", file: "/sound/whistle.mp3" },
   ];
 
   // motion values
