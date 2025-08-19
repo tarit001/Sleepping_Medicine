@@ -10,18 +10,21 @@ export default function ControlPanel({ sounds }) {
   
 
   // Initialize audio elements
-  useEffect(() => {
-    const newVolumes = {};
-    sounds.forEach((s) => {
-      if (!audioRefs.current[s.name]) {
-        audioRefs.current[s.name] = new Audio(s.file);
-        audioRefs.current[s.name].loop = true;
-        audioRefs.current[s.name].volume = 0.5;
-      }
-      newVolumes[s.name] = 0.5; // default
-    });
-    setVolumes(newVolumes);
-  }, [sounds]);
+useEffect(() => {
+  const newVolumes = {};
+  sounds.forEach((s) => {
+    if (!audioRefs.current[s.name]) {
+      audioRefs.current[s.name] = new Audio(s.file);
+      audioRefs.current[s.name].loop = true;
+      audioRefs.current[s.name].volume = 0.0; // Set to 0 at start
+    } else {
+      audioRefs.current[s.name].volume = 0.0; // Reset volume to 0 on update
+    }
+    newVolumes[s.name] = 0.0; // Set initial slider value to 0%
+  });
+  setVolumes(newVolumes);
+}, [sounds]);
+
 
   // Handle play/pause/stop based on control states
   useEffect(() => {
@@ -158,12 +161,12 @@ export default function ControlPanel({ sounds }) {
                 min="0"
                 max="1"
                 step="0.01"
-                value={volumes[s.name] || 0.5}
+                value={volumes[s.name] || 0.0}
                 onChange={(e) => changeVolume(s.name, e.target.value)}
                 className="w-full accent-blue-500"
               />
               <span className="ml-3 w-12 text-right">
-                {Math.round((volumes[s.name] || 0.5) * 100)}%
+                {Math.round((volumes[s.name] || 0.0) * 100)}%
               </span>
             </div>
           </div>

@@ -7,7 +7,7 @@ export default function Home() {
   const sounds = [
     { name: "🌧️", file: "/sound/rain.wav" },
     { name: "⛈️", file: "/sound/storm.wav" },
-    { name: "🕊️", file: "/sound/bird.wav" },
+    { name: "🕊️", file: "/sound/bird.mp3" },
     { name: "🌬️", file: "/sound/wind.wav" },
     { name: "🌊", file: "/sound/water.wav" },
     { name: "🔥", file: "/sound/fire.wav" },
